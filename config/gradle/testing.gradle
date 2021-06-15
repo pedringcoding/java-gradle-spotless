@@ -1,0 +1,9 @@
+dependencies {
+	testImplementation "org.junit.jupiter:junit-jupiter-api:$jUnitJupiterVersion"
+	testImplementation "org.junit.jupiter:junit-jupiter-engine:$jUnitJupiterVersion"
+	testImplementation "org.assertj:assertj-core:$assertJCoreVersion"
+}
+
+test {
+	useJUnitPlatform()
+}
