@@ -31,7 +31,7 @@ Clone this repository, and fire up a command-line tool.
 To execute the next command line:
 
 ```
-gradle build
+gradle compileJava
 ```
 
 You can check unused import is removed out _Alphanumeric_ class:
