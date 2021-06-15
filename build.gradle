@@ -1,0 +1,25 @@
+plugins {
+	id 'java-library'
+	// Automatic lombok and delombok configuration
+	id 'io.freefair.lombok'           version "$lombokVersion"
+	// Help analyzing code format
+	id 'com.diffplug.gradle.spotless' version "$spotlessVersion" apply false
+}
+
+group = "$PROJECT_GROUPNAME"
+version = "$PROJECT_VERSION"
+description = 'Pet project using Java and spotless to keep code with gradle'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+// repositories allowed to management dependencies
+apply from: "$rootDir/config/gradle/repositories.gradle"
+// Add support to check code format
+apply from: "$rootDir/config/gradle/format.gradle"
+// Add support to testing steps
+apply from: "$rootDir/config/gradle/testing.gradle"
+
+dependencies {
+	implementation "org.apache.commons:commons-lang3:$commonsLang3Version"
+}
