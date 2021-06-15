@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+// Apply to execute keep code
+apply plugin: 'com.diffplug.gradle.spotless'
+
+// goal: gradle spotlessApply || gradle check
+spotless {
+	encoding 'UTF-8' // all formats will be interpreted as UTF-8
+	java {
+		importOrder() // standard import order
+		removeUnusedImports()
+		googleJavaFormat() // has its own section below
+	}
+}
+// to delimiter execution at needed pre-step
+compileJava.dependsOn 'spotlessApply'
